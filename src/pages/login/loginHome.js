@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-export function loginHome() {
+export function LoginHome( { navigation } ) {
   return (
     <View style={styles.container}>
       <Image
@@ -10,20 +10,16 @@ export function loginHome() {
       />
       <Text style={styles.loginText}>Entre como:</Text>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={ () => navigation.navigate('LoginServidor')}>
         <Text style={styles.buttonText}>PROFESSOR(A)</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={ () => navigation.navigate('LoginAluno')}>
         <Text style={styles.buttonText}>ALUNO(A)</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={ () => navigation.navigate('LoginServidor')}>
         <Text style={styles.buttonText}>NUTRICIONISTA</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.transparentButton}>
-        <Text style={styles.passwordText}>Esqueceu sua senha?</Text>
       </TouchableOpacity>
     </View>
   );
@@ -34,6 +30,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#FFF"
   },
   logo: {
     width: 354,
@@ -55,10 +52,9 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     backgroundColor: '#F22D1B',
     elevation: 4, // Adiciona uma sombra
-    marginVertical: 10, // Espaçamento vertical entre os botões
+    marginVertical: 12, // Espaçamento vertical entre os botões
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20,
   },
   buttonText: {
     color: '#FFF',
@@ -66,20 +62,5 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontStyle: 'normal',
     fontWeight: '700',
-  },
-  transparentButton: {
-    marginTop: 20,
-    width: 212,
-    height: 33,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  passwordText: {
-    color: '#F2A71B',
-    fontFamily: 'Roboto',
-    fontSize: 13,
-    fontStyle: 'normal',
-    fontWeight: '400',
-    textDecorationLine: 'underline',
   },
 });
