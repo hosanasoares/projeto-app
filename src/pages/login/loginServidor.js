@@ -12,9 +12,9 @@ export function LoginServidor( { navigation } ) {
 
       <TextInput
         style={styles.input}
-        placeholder="Continue com o SIAPE" //pesquisar como colocar icone do figma
-        autoCorrect={false}
-        onChangeText={() => {}}
+        placeholder="Continue com o SIAPE" //pesquisar como colocar icone do figma | > define um texto temporário que é exibido no campo de entrada quando não há texto inserido.
+        autoCorrect={false} // Essa propriedade determina se a correção automática do teclado do dispositivo deve ser ativada ou não para este campo de texto |> nesse caso, a correção está sendo desativada.
+        onChangeText={() => {}} // Essa é uma função de retorno de chamada que é chamada sempre que o texto no campo de entrada é alterado pelo usuário
       />
       
       <TextInput
