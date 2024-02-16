@@ -1,6 +1,10 @@
 import React from 'react';
 import {View,Text,TouchableOpacity,StyleSheet} from 'react-native';
 
+//const Pergunta = () => {
+  //const handleEscolha = (escolha) => {
+   // console.log(O usuário escolheu: ${escolha});
+
 
 export function LoginServidor( { navigation } ) {
 
@@ -29,9 +33,4 @@ export function LoginServidor( { navigation } ) {
 
 
 
-//const Pergunta = () => {
-  //const handleEscolha = (escolha) => {
-   // console.log(O usuário escolheu: ${escolha});
-    // Adicione aqui o que deseja fazer com a escolha do usuário
-  //};
-//};
+
