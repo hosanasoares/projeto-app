@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-export function LoginHome( { navigation } ) {
+export function Index( { navigation } ) {
   return (
     <View style={styles.container}>
       <Image

@@ -26,7 +26,7 @@ export function LoginAluno( { navigation } ) {
       />
 
       <TouchableOpacity style={styles.button} 
-      onPress={ () => navigation.navigate('')} // Colocar caminho ou autenticação 
+      onPress={ () => navigation.navigate('HomeAluno')} // Colocar caminho ou autenticação 
       > 
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
