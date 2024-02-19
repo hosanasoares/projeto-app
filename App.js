@@ -3,10 +3,10 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native' // envolve toda a estrutura de navegação da sua aplicação(navegação principal)
 import { createStackNavigator } from '@react-navigation/stack'; //  uma função que cria um navegador de pilha(varias paginas)
 
-import { Index } from './src/pages/login/index';
-import { LoginAluno } from './src/pages/login/loginAluno';
-import { LoginServidor } from './src/pages/login/loginServidor';
-import { HomeAluno } from './src/pages/login/homeAluno';
+import { Index } from './src/pages/jspages/index';
+import { LoginAluno } from './src/pages/jspages/loginAluno';
+import { LoginServidor } from './src/pages/jspages/loginServidor';
+import { HomeAluno } from './src/pages/jspages/homeAluno';
 
 const Stack = createStackNavigator();
 
