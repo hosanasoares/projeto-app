@@ -11,6 +11,7 @@ import {
 import Swiper from 'react-native-swiper';
 import moment from 'moment';
 import 'moment/locale/pt-br'; // Importa o idioma português
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 moment.locale('pt-br'); // Define o idioma padrão para português
 
@@ -113,6 +114,21 @@ export function HomeAluno( { navigation } ) {
             <Text style={styles.buttonText}>Não</Text>
           </TouchableOpacity>
         </View>
+
+              
+        <View style = {styles.menuSnack}>
+        <Icon name="apple" size={20} color="#fff" style = {styles.iconMenu}/>
+          <Text style = {styles.menuText}>Refeições do dia:</Text>
+              
+            <Text style = {styles.textShift}>LANCHE (MANHÃ):</Text>
+              <Text style = {styles.textDescription}>descrição</Text>
+              
+            <Text style = {styles.textShift}>ALMOÇO:</Text>
+              <Text style = {styles.textDescription}>descrição</Text>  
+              
+            <Text style = {styles.textShift}>LANCHE(TARDE):</Text>
+              <Text style = {styles.textDescription}>descrição</Text>  
+
         
       </View>
     </SafeAreaView>
