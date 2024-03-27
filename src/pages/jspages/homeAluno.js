@@ -1,34 +1,46 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import Calendar from '../../components/Calendar';
+import ProfileSvg from '../../components/profileSvg';
+import {Dimensions} from 'react-native';
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import 'moment/locale/pt-br'; // Importa o idioma português
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+const windowWidth = Dimensions.get('window').width;
 
 export function HomeAluno( { navigation } ) {
   const [selectedDate, setSelectedDate] = useState(null); // Estado para armazenar a data selecionada
 
   return (
       <View style={styles.container}>
-
-        <View style={styles.container}>
+        <View>
+          {/* Header da página */}
+           <ProfileSvg windowWidth={windowWidth}/> {/* Possível refatoramento no posicionamento do svg */}
+        </View>
+          
+        <View>
           {/* Renderiza o componente de calendário */}
           <Calendar onSelectDate={setSelectedDate} selected={selectedDate} />
           <StatusBar style="auto" />
         </View>
 
         <View style={styles.buttonBox}>
-        <Text style={styles.texto}>Você estará no campus hoje?</Text>
-          <TouchableOpacity style={styles.button} onPress={() => handleEscolha('Sim')}>
-            <Text style={styles.buttonText}>Sim</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => handleEscolha('Não')}>
-            <Text style={styles.buttonText}>Não</Text>
-          </TouchableOpacity>
+          <Text style={styles.buttonBoxTexto}>Você estará no campus hoje?</Text>
+          <View style={styles.buttonArea}>
+
+            <TouchableOpacity style={styles.touchableNegativeButton} onPress={() => handleEscolha('Não')}>
+              <Text style={styles.textButton}>Não</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.touchablePositiveButton} onPress={() => handleEscolha('Sim')}>
+              <Text style={styles.textButton}>Sim</Text>
+            </TouchableOpacity>
+
+          </View>
         </View>
 
               
-        <View style = {styles.menuSnack}>
+        {/* <View style = {styles.menuSnack}>
           <Icon name="apple" size={20} color="#fff" style = {styles.iconMenu}/>
           <Text style = {styles.menuText}>Refeições do dia:</Text>
               
@@ -40,72 +52,80 @@ export function HomeAluno( { navigation } ) {
               
             <Text style = {styles.textShift}>LANCHE(TARDE):</Text>
               <Text style = {styles.textDescription}>descrição</Text>  
-        </View>
+        </View> */}
 
       </View>
 
   );
 };
 
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 24,
   },
   header: {
-    paddingHorizontal: 16,
-  },
-  picker: {
-    flex: 1,
-    maxHeight: 150,
-    paddingVertical: 12,
     flexDirection: 'row',
-    alignItems: 'center',
-  },
-  subtitle: {
-    fontSize: 25,
-    fontWeight: '800',
-    color: '#000',
-    marginBottom: 12,
-  },
-  /** Item */
-  item: {
-    flex: 1,
-    height: 100,
-    marginHorizontal: 4,
-    paddingVertical: 6,
-    paddingHorizontal: 4,
-    borderWidth: 1,
-    borderRadius: 15,
-    borderColor: '#e3e3e3',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  itemRow: {
-    width: 400,
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'space-between',
-    marginHorizontal: -4,
-  },
-  itemWeekday: {
-    fontSize: 21,
-    fontWeight: '500',
-    color: '#737373',
-  },
-  itemDate: {
-    fontSize: 23,
-    fontWeight: '600',
-    color: '#111',
   },
   buttonBox: {
-    width:300,
-    height: 110,
-    borderRadius: 15,
-    backgroundColor: "#3b6a42",
-  }
+    alignItems: 'center',
+    justifyContent: 'center',
+    width:291,
+    height: 133,
+    borderRadius: 14,
+    backgroundColor: 'rgba(37, 89, 45, 0.90)',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 4,
+  },
+  buttonBoxTexto: {
+    color: '#FFF',
+    textAlign: 'center',
+    fontFamily: 'Roboto',
+    fontSize: 24,
+    fontStyle: 'normal',
+    fontWeight: '700',
+    lineHeight: 30,
+  },
+  buttonArea: {
+    width: 206,
+    height: 32,
+    borderRadius: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+  },
+  touchableNegativeButton: {
+    width: 92,
+    height: 28,
+    borderRadius: 20,
+    backgroundColor: 'rgba(37, 89, 45, 0.5)',
 
+  },
+  touchablePositiveButton:{
+    width: 92,
+    height: 28,
+    borderRadius: 20,
+    backgroundColor: 'rgba(134, 166, 65, 0.5)',
+  },
+  textButton: {
+    display: 'flex',
+    width: 45,
+    height: 24,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    color: '#FFF',
+    textAlign: 'center',
+    fontFamily: 'Roboto',
+    fontSize: 15,
+    fontStyle: 'normal',
+    fontWeight: '700',
+    lineHeight: 15,
+  },
 });

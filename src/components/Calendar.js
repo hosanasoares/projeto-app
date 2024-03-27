@@ -72,8 +72,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    width: 171,
+    height: 24,
+    color: '#000',
+    textAlign: 'center',
+    fontFamily: 'Roboto',
+    fontSize: 24,
+    fontStyle: 'normal',
+    fontWeight: '700',
+    lineHeight: 24,
   },
   dateSection: {
     width: '100%',
